@@ -1,0 +1,34 @@
+﻿<Window x:Class="autoservice.windows.InputBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:autoservice.windows"
+        mc:Ignorable="d"
+        Title="{Binding WindowCaption}" Height="450" Width="800">
+    <Grid>
+        <StackPanel
+            Orientation="Vertical">
+            <TextBox
+                x:Name="TextBox"
+                Margin="10"
+                Text="{Binding InputText}"/>
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Button
+                    x:Name="OkButton"
+                    Content="Ok"
+                Margin="5"
+                Click="OkButton_Click"/>
+                <Button
+                x:Name="CancelButton"
+                Content="Cancel"
+                Margin="5"
+                Click="CancelButton_Click"/>
+
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>

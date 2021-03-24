@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище spenkinModelContainer" CdmEntityContainer="spenkinEntities">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="spenkinModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="GenderCode" ColumnName="GenderCode" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientService">
+      <EntityTypeMapping TypeName="spenkinModel.ClientService">
+        <MappingFragment StoreEntitySet="ClientService">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentByService">
+      <EntityTypeMapping TypeName="spenkinModel.DocumentByService">
+        <MappingFragment StoreEntitySet="DocumentByService">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClientServiceID" ColumnName="ClientServiceID" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="spenkinModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturer">
+      <EntityTypeMapping TypeName="spenkinModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="spenkinModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MainImagePath" ColumnName="MainImagePath" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductPhoto">
+      <EntityTypeMapping TypeName="spenkinModel.ProductPhoto">
+        <MappingFragment StoreEntitySet="ProductPhoto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSale">
+      <EntityTypeMapping TypeName="spenkinModel.ProductSale">
+        <MappingFragment StoreEntitySet="ProductSale">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ClientServiceID" ColumnName="ClientServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="spenkinModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DurationInSeconds" ColumnName="DurationInSeconds" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="MainImagePath" ColumnName="MainImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicePhoto">
+      <EntityTypeMapping TypeName="spenkinModel.ServicePhoto">
+        <MappingFragment StoreEntitySet="ServicePhoto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tag">
+      <EntityTypeMapping TypeName="spenkinModel.Tag">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AttachedProduct" TypeName="spenkinModel.AttachedProduct" StoreEntitySet="AttachedProduct">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ID" ColumnName="MainProductID" />
+      </EndProperty>
+      <EndProperty Name="Product1">
+        <ScalarProperty Name="ID" ColumnName="AttachedProductID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TagOfClient" TypeName="spenkinModel.TagOfClient" StoreEntitySet="TagOfClient">
+      <EndProperty Name="Client">
+        <ScalarProperty Name="ID" ColumnName="ClientID" />
+      </EndProperty>
+      <EndProperty Name="Tag">
+        <ScalarProperty Name="ID" ColumnName="TagID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
